@@ -1,2 +1,3 @@
 dependencies:
   espressif/mqtt: "^1.0.0"
+  espressif/mdns: "*"
