@@ -38,3 +38,9 @@ CONFIG_ESP_PANIC_HANDLER_IRAM=y
 
 # Optional: +~5KB DRAM, extra espcoredump component logs (disable in production if tight on RAM)
 # CONFIG_ESP_COREDUMP_LOGS=y
+
+# FreeRTOS task list + stack high-water mark + CPU% for DeviceRuntimeMonitor
+CONFIG_FREERTOS_USE_TRACE_FACILITY=y
+CONFIG_FREERTOS_USE_STATS_FORMATTING_FUNCTIONS=y
+CONFIG_FREERTOS_GENERATE_RUN_TIME_STATS=y
+CONFIG_FREERTOS_RUN_TIME_STATS_USING_ESP_TIMER=y
