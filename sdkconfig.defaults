@@ -15,3 +15,26 @@ CONFIG_MBEDTLS_CHACHAPOLY_C=y
 CONFIG_MBEDTLS_SSL_PROTO_TLS1_3=y
 CONFIG_MBEDTLS_SSL_TLS1_3_KEXM_EPHEMERAL=y
 
+# --- Core dump (flash) for DeviceDiagnostics / esp_core_dump_get_summary ---
+# Requires coredump partition in partitions.csv (128K).
+CONFIG_ESP_COREDUMP_ENABLE_TO_FLASH=y
+CONFIG_ESP_COREDUMP_ENABLE=y
+CONFIG_ESP_COREDUMP_CHECK_BOOT=y
+# CONFIG_ESP_COREDUMP_ENABLE_TO_NONE is not set
+# CONFIG_ESP_COREDUMP_ENABLE_TO_UART is not set
+# CONFIG_ESP_COREDUMP_FLASH_NO_OVERWRITE is not set
+
+# Richer dump: heap/.bss/.data + more tasks (uses more of coredump partition)
+CONFIG_ESP_COREDUMP_CAPTURE_DRAM=y
+CONFIG_ESP_COREDUMP_MAX_TASKS_NUM=64
+# Dedicated stack for dump writer (more reliable than reusing crashed task stack)
+CONFIG_ESP_COREDUMP_STACK_SIZE=1792
+
+# --- Panic / watchdog: capture dumps on WDT and print panic to UART before reboot ---
+CONFIG_ESP_SYSTEM_PANIC_PRINT_REBOOT=y
+CONFIG_ESP_SYSTEM_PANIC_REBOOT_DELAY_SECONDS=3
+CONFIG_ESP_TASK_WDT_PANIC=y
+CONFIG_ESP_PANIC_HANDLER_IRAM=y
+
+# Optional: +~5KB DRAM, extra espcoredump component logs (disable in production if tight on RAM)
+# CONFIG_ESP_COREDUMP_LOGS=y
