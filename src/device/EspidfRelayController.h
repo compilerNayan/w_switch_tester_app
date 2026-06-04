@@ -6,8 +6,7 @@
 #include "IRelayController.h"
 #include "SwitchState.h"
 #include "driver/gpio.h"
-#include "ILogger.h"
-#include "Tag.h"
+#include "logger/ILogger.h"
 
 /**
  * Relay board is ACTIVE-LOW: GPIO LOW = relay ON (LED on, click), GPIO HIGH = relay OFF (LED off).

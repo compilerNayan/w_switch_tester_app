@@ -5,8 +5,7 @@
 #include <StandardDefines.h>
 #include "IPhysicalSwitchReader.h"
 #include "SwitchState.h"
-#include "ILogger.h"
-#include "Tag.h"
+#include "logger/ILogger.h"
 #include <map>
 
 /* @Component */

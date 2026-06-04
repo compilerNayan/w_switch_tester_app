@@ -5,8 +5,7 @@
 #include <StandardDefines.h>
 #include "IRelayController.h"
 #include "SwitchState.h"
-#include "ILogger.h"
-#include "Tag.h"
+#include "logger/ILogger.h"
 #include <map>
 
 /* @Component */

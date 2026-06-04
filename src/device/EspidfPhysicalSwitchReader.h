@@ -5,8 +5,7 @@
 #include <StandardDefines.h>
 #include "IPhysicalSwitchReader.h"
 #include "SwitchState.h"
-#include "ILogger.h"
-#include "Tag.h"
+#include "logger/ILogger.h"
 #include "esp_adc/adc_oneshot.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
@@ -41,6 +40,7 @@ class EspidfPhysicalSwitchReader : public IPhysicalSwitchReader {
         }
         adc_oneshot_unit_init_cfg_t initConfig = {
             .unit_id = ADC_UNIT_1,
+            .clk_src = ADC_RTC_CLK_SRC_DEFAULT,
             .ulp_mode = ADC_ULP_MODE_DISABLE,
         };
         adc_oneshot_new_unit(&initConfig, &adcHandle);
