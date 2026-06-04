@@ -1,4 +1,4 @@
-#ifndef ARDUINO
+#if !defined(ARDUINO) && !defined(ESP_PLATFORM)
 #ifndef STUBPHYSICALSWITCHREADER_H
 #define STUBPHYSICALSWITCHREADER_H
 
@@ -40,5 +40,5 @@ class StubPhysicalSwitchReader : public IPhysicalSwitchReader {
 };
 
 #endif // STUBPHYSICALSWITCHREADER_H
-#endif // ARDUINO
+#endif // !ARDUINO && !ESP_PLATFORM
 

@@ -1,4 +1,4 @@
-#ifndef ARDUINO
+#if !defined(ARDUINO) && !defined(ESP_PLATFORM)
 #ifndef STUBRELAYCONTROLLER_H
 #define STUBRELAYCONTROLLER_H
 
@@ -42,5 +42,5 @@ class StubRelayController : public IRelayController {
 };
 
 #endif // STUBRELAYCONTROLLER_H
-#endif // ARDUINO
+#endif // !ARDUINO && !ESP_PLATFORM
 
